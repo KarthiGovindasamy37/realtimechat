@@ -71,11 +71,11 @@ const sendMessageDetails = () =>{
   let correctMessage = message.trim()
   
 if(correctMessage.length > 0) {
-  socket.current.emit("sendMessage",{
-    senderId : _id,
-    receiverId : chat._id,
-    message : correctMessage
-  })
+//   socket.current.emit("sendMessage",{
+//     senderId : _id,
+//     receiverId : chat._id,
+//     message : correctMessage
+//   })
 
   let value={
     members : [_id,chat._id],
