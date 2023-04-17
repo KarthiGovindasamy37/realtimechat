@@ -88,7 +88,7 @@ function LoginPage() {
                        }                
                </form>
                 </div>
-                <h5 className='mt-3'>Don't have an account? <Link to="/signup" className='link'>Sign up</Link></h5>
+                <h5 className='mt-3 ps-2'>Don't have an account? <Link to="/signup" className='link'>Sign up</Link></h5>
                 </div>
             </div>
         </div>

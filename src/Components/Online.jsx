@@ -23,7 +23,7 @@ const chatToConv = (e) =>{
         <div className='ps-2 mt-4 '>See who's online</div>
         <div className="onlinelist-div pt-4">
           {
-            onlineList.map((e) => {
+            onlineList.length > 0 ? onlineList.map((e) => {
               return(
                 <div onClick={()=>chatToConv(e)} className=" d-flex align-items-center py-1 ps-2 online-div">
             <div className="online-img-div">
@@ -35,6 +35,8 @@ const chatToConv = (e) =>{
           </div>
               )
             })
+            :
+            <div className="online-empty ps-2">None of your friends are online</div>
           }
       </div>
     </div>

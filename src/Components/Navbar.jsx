@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { logout } from '../Redux/Slices/UserSlice'
+import { io } from 'socket.io-client'
+import { env } from '../Config'
 
 function Navbar() {
 
@@ -10,9 +12,22 @@ const dispatch = useDispatch()
 
 let navigate = useNavigate()
 
+const { _id } = userDetails
+
 useEffect(()=>{
 if(isLoggedout) navigate("/")
 },[isLoggedout])
+
+const socket = useRef(null)
+
+useEffect(() =>{
+socket.current = io(env.socket)
+},[])
+
+const logoutHandler = () =>{
+socket.current.emit("removeUser",_id)
+  dispatch(logout())
+}
 
   return (
     <div className='navbar d-flex justify-content-between'>
@@ -20,7 +35,7 @@ if(isLoggedout) navigate("/")
      <div className="pe-2 text-center">
       <div className="d-flex justify-content-center">
        <div className="nav-icon">
-        <img src={`${userDetails.profilePicture.length > 0 ? `/assets/${userDetails.profilePicture}` : `/assets/chatnew.jpg`}`} onClick={()=>dispatch(logout())} className='navbar-img' />
+        <img src={`${userDetails.profilePicture.length > 0 ? `/assets/${userDetails.profilePicture}` : `/assets/chatnew.jpg`}`} onClick={()=>logoutHandler()} className='navbar-img' />
         <div className="logout-div">Logout</div>
         </div>
         </div>

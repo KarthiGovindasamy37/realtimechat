@@ -6,7 +6,6 @@ import { env } from "../../Config";
 const initialState = window.localStorage.getItem("loginDetails") ? 
 {
     userDetails: JSON.parse(window.localStorage.getItem("loginDetails")),
-    userName:"",
     nameErrorStatus:false,
     signupLoading:false,
     signupStatus:false,
@@ -17,16 +16,17 @@ const initialState = window.localStorage.getItem("loginDetails") ?
     tempStatus:false,
     resetLoading:false,
     resetStatus:false,
-    isLoggedout:false
+    isLoggedout:false,
+    offline:false
 }
 :
 {
 userDetails : {
    name : "",
    email : "",
-   id : ""
+   _id : "",
+   profilePicture:""
 },
-userName:"",
 nameErrorStatus:false,
 signupLoading:false,
 signupStatus:false,
@@ -37,7 +37,8 @@ tempLoading:false,
 tempStatus:false,
 resetLoading:false,
 resetStatus:false,
-isLoggedout:false
+isLoggedout:false,
+offline:false
 
 }
 
@@ -141,9 +142,11 @@ const userSlice = createSlice({
     logout : (state) =>{
       window.localStorage.clear()
       state.isLoggedout = true
-      state.userDetails.user = ""
+      state.userDetails.name = ""
       state.userDetails.email = ""
-      state.userDetails.id = ""
+      state.userDetails._id = ""
+      state.userDetails.profilePicture = ""
+      state.offline = true
     },
     setLoggedin : (state) => {
       state.isLoggedin = false

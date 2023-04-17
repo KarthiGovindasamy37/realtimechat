@@ -79,7 +79,7 @@
   -webkit-background-clip: text;
 }
 .col1{
-  height: 577px;
+  height: 591px;
 }
 .chatlist-input{
   border: none;
@@ -92,7 +92,7 @@
   overflow-y: scroll;
 }
 .chatlist-div-drop{
-  height: 526px;
+  height: 525px;
   overflow-y: scroll;
   display: none;
 }
@@ -103,6 +103,9 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
+}
+.chatlist{
+  position: relative;
 }
 .chatlist:hover{
   background-color: #ebe9e9;
@@ -115,12 +118,11 @@
 .conversation-div{
   border-left: 1px solid grey;
   border-right: 1px solid grey;
-  height: 590px;
 }
 .conv{
   min-width: 25%;
   max-width: 80%;
-  background-color: #98ee90;
+  background-color: #e1e4e1;
   min-height: 20px;
   display: inline-block;
   border-radius: 10px;
@@ -128,7 +130,7 @@
 .self{
   min-width: 25%;
   max-width: 80%;
-  background-color: #dadadd;
+  background-color: #a8f0a1;
   min-height: 20px;
   display: inline-block;
   float: right;
@@ -145,7 +147,7 @@
   text-overflow: ellipsis;
 }
 .conv-div{
-  height: 420px;
+  height: 425px;
   overflow-y: scroll;  
 }
 ::-webkit-scrollbar {
@@ -172,7 +174,7 @@
   cursor: pointer;
 }
 .onlinelist-div{
-  height: 529px;
+  height: 480px;
   overflow-y: scroll;
 }
 .online-div:hover{
@@ -235,8 +237,12 @@
   font-size: 1.5rem;
 }
 .chat-date{
-  border-radius: 10px;
-  background-color: #c0bebe;
+  border-radius: 8px;
+  background-color: #f7e5f1;
+  font-size: small;
+  font-weight: 600;
+  color: #5a5959;
+  padding: 2px;
 }
 .topbar{
   height: 50px;
@@ -265,8 +271,200 @@
    display: block;
   }
 }
-@media only screen and (min-width : 300px) and (max-width : 768px){
+@media only screen and (min-width : 400px) and (max-width : 500px){
+  .x-mark{
+    right: 50px;
+  }
+}
+@media only screen and (min-width : 501px) and (max-width : 600px){
+  .x-mark{
+    right: 60px;
+  }
+}
+@media only screen and (min-width : 601px) and (max-width : 700px){
+  .x-mark{
+    right: 70px;
+  }
+}
+@media only screen and (min-width : 701px) and (max-width : 768px){
   .x-mark{
     right: 80px;
   }
+}
+.online-empty{
+  color: #6757f1;
+}
+.new-message{
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #57dff1;
+  position: absolute;
+  right: 15px;
+  bottom: 6px;
+  font-size: small;
+}
+.check-seen{
+  color: rgb(100, 71, 207);
+}
+.chatlist-timeline{
+  position: absolute;
+  right: 5px;
+  top: 18px;
+  font-size: x-small;
+}
+.chatlist-timeline-new{
+  position: absolute;
+  right: 5px;
+  top: 7px;
+  font-size: x-small;
+  color: #09d8f3;
+}
+@media only screen and (min-width : 270px) and (max-width : 290px){
+.chat-name{
+  width:150px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+}
+@media only screen and (min-width : 240px) and (max-width : 269px){
+  .chat-name{
+    width:130px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  }
+@media only screen and (min-width : 210px) and (max-width : 239px){
+    .chat-name{
+      width:100px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+}
+@media only screen and (min-width : 180px) and (max-width : 209px){
+  .chat-name{
+    width:70px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (min-width : 150px) and (max-width : 179px){
+  .chat-name{
+    width:40px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (min-width : 291px) and (max-width : 400px){
+  .chat-name{
+    width:160px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (min-width : 401px) and (max-width : 500px){
+  .chat-name{
+    width:170px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (min-width : 501px) and (max-width : 600px){
+  .chat-name{
+    width:180px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (min-width : 601px) and (max-width : 700px){
+  .chat-name{
+    width:190px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (min-width : 701px) and (max-width : 768px){
+  .chat-name{
+    width:200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (min-width : 769px) and (max-width : 800px){
+  .chat-name{
+    width:150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (min-width : 801px) and (max-width : 840px){
+  .chat-name{
+    width:160px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (min-width : 841px) and (max-width : 880px){
+  .chat-name{
+    width:170px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (min-width : 881px) and (max-width : 920px){
+  .chat-name{
+    width:180px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (min-width : 921px) and (max-width : 1000px){
+  .chat-name{
+    width:190px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (min-width : 1001px) and (max-width : 1100px){
+  .chat-name{
+    width:200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (min-width : 1101px) and (max-width : 1200px){
+  .chat-name{
+    width:210px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (min-width : 1201px){
+  .chat-name{
+    width:220px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+.online-noti{
+  font-size: x-small;
+  color: white;
 }

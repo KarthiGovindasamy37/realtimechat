@@ -48,7 +48,8 @@ function SignupPage() {
   let formik = useFormik({
     initialValues : {
       email : "",
-      password : ""
+      password : "",
+      profilePicture:""
     },
     validate : (value) =>{
       let errors = {}
