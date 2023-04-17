@@ -196,11 +196,12 @@ const portalSlice = createSlice({
      },
      setChatlistNewMessage : (state,{payload}) =>{
         console.log("payload",payload);
-        if(state.chatList[payload.index].updatedAt !== payload.timestamp){
-        state.chatList[payload.index].newMessage = state.chatList[payload.index].newMessage ? state.chatList[payload.index].newMessage + 1 : 1 
-        state.chatList[payload.index].updatedAt = payload.timestamp
-        let chatUser = state.chatList.splice(payload.index,1)
-        console.log("chatuser",chatUser[0]);
+        let index = state.chatList.findIndex(e => e._id === payload.sender)
+        if(state.chatList[index].updatedAt !== payload.timestamp){
+        state.chatList[index].newMessage = state.chatList[index].newMessage ? state.chatList[index].newMessage + 1 : 1 
+        state.chatList[index].updatedAt = payload.timestamp
+        let chatUser = state.chatList.splice(index,1)
+        console.log("chatuser",chatUser[0]._id);
         state.chatList.unshift(chatUser[0])
         }
      },

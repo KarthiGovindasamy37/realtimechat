@@ -54,7 +54,7 @@ useEffect(() =>{console.log("it wokzzz1");
       let index = chatList.findIndex(e => e._id === newMessageDetails.sender)
       console.log(index);
       if(index > -1){
-        setChatlistNewMessage({index,timestamp:newMessageDetails.timestamp})
+        setChatlistNewMessage({sender:newMessageDetails.sender,timestamp:newMessageDetails.timestamp})
       }else{
         getChatMember(newMessageDetails.sender)
       }
